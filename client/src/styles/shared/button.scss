@@ -1,0 +1,54 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.app_btn {
+  height: 40px;
+  width: auto;
+  padding: 0 30px;
+  background: $blue;
+  color: $white;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 40px;
+  border: 0px solid $transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    background: $hblue;
+    transition: 0.5s;
+  }
+
+  & > span {
+    width: 20px;
+    height: 20px;
+    & > svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &.active {
+    background: $blue;
+    color: $white;
+  }
+
+  &.loading {
+    background: $gray;
+    cursor: not-allowed;
+
+    & > span > svg {
+      animation: spin 2s linear infinite;
+    }
+  }
+
+  &.disabled {
+    background: $gray;
+    cursor: not-allowed;
+  }
+}

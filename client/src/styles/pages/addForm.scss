@@ -1,0 +1,158 @@
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutOverlay {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  animation: fadeInOverlay 0.3s ease forwards;
+}
+
+.fadeOut {
+  animation: fadeOutOverlay 0.3s ease forwards;
+}
+
+.slideIn {
+  animation: slideInRight 0.4s ease forwards;
+}
+
+.slideOut {
+  animation: slideOutLeft 0.4s ease forwards;
+}
+
+.app_form_popup_main_cover {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.app_add_new_item_form_cover {
+  width: 100%;
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  justify-content: flex-end;
+
+  .app_form_cover_inside {
+    width: 620px;
+    position: relative;
+    background: $white;
+    padding: 30px 40px;
+    border-radius: 8px;
+    border: 1px solid $tableborder;
+
+    .app_cross_btn_form {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0px solid transparent;
+      background: transparent;
+      cursor: pointer;
+
+      > span {
+        width: 20px;
+        height: 20px;
+
+        > svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 13px;
+      font-weight: 500;
+      color: $gray;
+    }
+
+    .app_add_form_files {
+      width: 100%;
+      margin-top: 30px;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        p.app_field_err {
+          font-size: 13px;
+          font-weight: 500;
+          margin-top: 2px;
+          color: $error;
+        }
+      }
+    }
+  }
+}
+
+.app_submit_back_btn {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  a {
+    color: $gray;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  > span.btn_cancel {
+    background: transparent;
+    border: 0px solid transparent;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,452 @@
+.app_table_cover {
+  display: flex;
+  flex-direction: column;
+
+  .app_table_top_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .app_manage_heading_btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      h1 {
+        font-size: 17px;
+        font-weight: 500;
+      }
+
+      .app_new_btn {
+        display: flex;
+        margin-left: 20px;
+
+        & > button {
+          font-size: 12px;
+          font-weight: 500;
+          height: 32px;
+          color: $white;
+          padding: 0 16px 0 12px;
+          border-radius: 6px;
+          line-height: 30px;
+          background: $blue;
+          transition: 0.5s;
+          cursor: pointer;
+          display: flex;
+          border: 0px solid transparent;
+          align-items: center;
+
+          & > span {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+
+            & > svg {
+              width: 18px;
+              height: 18px;
+            }
+          }
+
+          &:hover {
+            background: $hblue;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+
+    .app_table_search {
+      width: auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .app_table_search_cover {
+        width: auto;
+        display: flex;
+        gap: 12px;
+        padding: 0 0 0 12px;
+        border-radius: 6px;
+        background: $white;
+        align-items: center;
+        overflow: hidden;
+        border: 1px solid $tableborder;
+
+        & > span {
+          width: 18px;
+          height: 18px;
+          opacity: 0.2;
+
+          & > svg {
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        input[type="text"] {
+          width: 400px;
+          height: 40px;
+          font-weight: 500;
+          font-size: 15px;
+          border: 0px solid transparent;
+
+          &:focus-visible {
+            outline: -webkit-focus-ring-color auto 0px !important;
+          }
+        }
+      }
+
+      .app_table_top_btn {
+        display: flex;
+        gap: 5px;
+
+        button {
+          height: 40px;
+          width: auto;
+          padding: 0 18px;
+          background: $blue;
+          color: $white;
+          font-weight: 500;
+          font-size: 15px;
+          border-radius: 6px;
+          border: 1px solid $tableborder;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          cursor: pointer;
+          transition: 0.5s;
+
+          & > span {
+            width: 15px;
+            height: 15px;
+
+            & > svg {
+              width: 15px;
+              height: 15px;
+            }
+          }
+
+          p {
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+          }
+
+          &.app_table_delete {
+            color: $error;
+            background: $tablehead;
+
+            &:hover {
+              color: $white;
+              background: $error;
+            }
+          }
+          &.app_table_download {
+            color: $hblue;
+            background: $tablehead;
+
+            &:hover {
+              color: $white;
+              background: $hblue;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .app_table_structure {
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid $tableborder;
+
+    table {
+      width: 100%;
+
+      thead {
+        tr {
+          border-bottom: 1px solid $tableborder;
+          background: $tablehead;
+          th {
+            color: $gray;
+            text-align: left;
+            padding: 0.5rem 1rem;
+
+            &:last-child {
+              text-align: right;
+            }
+
+            input[type="checkbox"] {
+              margin-top: 4px;
+            }
+
+            p {
+              font-size: 13px;
+              font-weight: 500;
+              text-transform: uppercase;
+              display: flex;
+              align-items: center;
+
+              & > span {
+                width: 12px;
+                height: 12px;
+                margin-left: 6px;
+                margin-top: -1px;
+
+                & > svg {
+                  width: 12px;
+                  height: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+      tbody {
+        background: $white;
+        tr {
+          border-bottom: 1px solid $tableborder;
+          td {
+            font-size: 15px;
+            padding: 0.5rem 1rem;
+            p {
+              & > span.role_Admin {
+                color: $info;
+                padding: 4px 10px;
+                text-align: center;
+                border-radius: 4px;
+                background: $infobg;
+              }
+              & > span.role_Super_admin {
+                color: $success;
+                padding: 4px 10px;
+                text-align: center;
+                border-radius: 4px;
+                background: $successbg;
+              }
+              & > span.role_Staff {
+                color: $warning;
+                padding: 4px 10px;
+                text-align: center;
+                border-radius: 4px;
+                background: $warningbg;
+              }
+            }
+          }
+          &:last-child {
+            border-bottom: 0px solid transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .noDataAvailable {
+    display: flex;
+    height: 400px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    > span {
+      width: 60px;
+      height: 60px;
+      opacity: 0.07;
+
+      > svg {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    > p {
+      margin-top: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      opacity: 0.2;
+    }
+  }
+}
+
+.app_table_pagination {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+
+  .app_select_item_view {
+    font-size: 14px;
+    font-weight: 400;
+    color: $gray;
+  }
+
+  .app_pagination_items {
+    display: flex;
+    gap: 4px;
+
+    button {
+      color: $gray;
+      display: flex;
+      width: 30px;
+      height: 30px;
+      font-size: 13px;
+      font-weight: 500;
+      background: $white;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $tableborder;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.4;
+      }
+
+      &.btn_pagination_active {
+        font-weight: 700;
+        color: $white;
+        background: $blue;
+        border: 1px solid $blue;
+      }
+
+      & > span {
+        width: 16px;
+        height: 16px;
+
+        & > svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    & > span.app_pager_dots {
+      font-size: 18px;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 22px;
+    }
+  }
+}
+
+.app_table_btn_group {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+
+  & > button {
+    border: 0px solid transparent;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    background: $tablehead;
+    transition: 0.5s;
+
+    &.app_table_view_btn {
+      color: $success;
+    }
+
+    &.app_table_status_active {
+      color: $success;
+    }
+
+    &.app_table_status_inactive {
+      color: $gray;
+    }
+
+    &.app_table_edit_btn {
+      color: $blue;
+    }
+
+    &.app_table_delete_btn {
+      color: $red;
+    }
+
+    & > span {
+      width: 15px;
+      height: 15px;
+
+      & > svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    &.app_table_view_btn {
+      & > span {
+        width: 17px;
+        height: 17px;
+
+        & > svg {
+          width: 17px;
+          height: 17px;
+        }
+      }
+    }
+
+    &:hover {
+      &.app_table_view_btn,
+      &.app_table_edit_btn,
+      &.app_table_delete_btn,
+      &.app_table_status_active,
+      &.app_table_status_inactive {
+        color: $white;
+        transition: 0.5s;
+      }
+
+      &.app_table_view_btn {
+        background: $success;
+      }
+
+      &.app_table_edit_btn {
+        background: $blue;
+      }
+
+      &.app_table_delete_btn {
+        background: $red;
+      }
+
+      &.app_table_status_active {
+        background: $success;
+      }
+
+      &.app_table_status_inactive {
+        background: $gray;
+      }
+    }
+  }
+}
+
+.app_table_share {
+  display: flex;
+  align-items: center;
+  color: $blue;
+  text-decoration: underline;
+  border: 0px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+
+  & > span {
+    width: 15px;
+    height: 15px;
+    margin-left: 8px;
+
+    & > svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+.active-status {
+  padding: 3px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  background: $successbg;
+  color: $success;
+  border-radius: 5px;
+  border: 1px solid $success;
+}

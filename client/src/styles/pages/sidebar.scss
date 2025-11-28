@@ -1,0 +1,520 @@
+.app_sidebar {
+  top: 0px;
+  left: 0px;
+  width: 200px;
+  height: 100dvh;
+  overflow: auto;
+  display: flex;
+  position: fixed;
+  background: $white;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid lighten($gray, 40%);
+
+  .app_inside_sidebar {
+    display: flex;
+    flex-direction: column;
+
+    .app_side_logo {
+      display: flex;
+      width: 58%;
+      padding: 16px 17px 10px;
+    }
+
+    .app_sidebar_cover {
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px;
+      margin-top: 20px;
+
+      .app_sideber_item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 50px;
+        }
+
+        & > p {
+          font-size: 13px;
+          color: lighten($gray, 15%);
+          margin-bottom: 8px;
+        }
+
+        ul {
+          gap: 12px;
+          display: flex;
+          flex-direction: column;
+
+          li {
+            display: flex;
+
+            & > a {
+              display: flex;
+              gap: 12px;
+              align-items: center;
+              position: relative;
+              z-index: 1;
+
+              & > p {
+                font-size: 14px;
+                line-height: 18px;
+                color: $dgray;
+              }
+
+              & > span {
+                width: 18px;
+                height: 18px;
+                color: $dgray;
+
+                & > svg {
+                  width: 18px;
+                  height: 18px;
+                }
+              }
+
+              &:hover {
+                & > p {
+                  color: $blue;
+                }
+                & > span {
+                  color: $blue;
+                }
+              }
+            }
+
+            &.active_sidebar {
+              position: relative;
+
+              & > a {
+                & > p {
+                  color: $blue;
+                }
+
+                & > span {
+                  color: $blue;
+                }
+              }
+
+              &:after {
+                content: "";
+                position: absolute;
+                top: -6px;
+                left: -12px;
+                width: calc(100% + 24px);
+                height: 30px;
+                z-index: 0;
+                background: $infobg;
+                padding: 10px 20px;
+                border-radius: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .app_logout {
+    width: 100%;
+    padding: 0 18px 20px;
+
+    > button.app_logout_inside {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      background: $transparent;
+      border: 0px solid $transparent;
+      text-align: left;
+
+      & > span {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        overflow: hidden;
+        color: $black;
+        text-align: center;
+        line-height: 30px;
+        font-size: 13px;
+        font-weight: 800;
+        box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.07);
+
+        & > svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      .app_user_logout_btn {
+        display: flex;
+        flex-direction: column;
+
+        & > h4 {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 18px;
+          color: $black;
+        }
+
+        & > p {
+          font-size: 12px;
+          line-height: 18px;
+          color: $blue;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.app_right_sidebar {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 240px;
+  height: 100dvh;
+  background: $white;
+  z-index: 10;
+  overflow: auto;
+  padding: 12px 10px 0px;
+  border-left: 1px solid lighten($gray, 40%);
+
+  .app_link_items {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    & > h4 {
+      font-size: 14px;
+      margin-bottom: 10px;
+      line-height: normal;
+      font-weight: 700;
+    }
+
+    & > ul {
+      display: flex;
+      width: auto;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      & > li {
+        width: 48%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 6px;
+        border: 1px solid $tableborder;
+        padding: 8px 10px;
+        cursor: pointer;
+        transition: 0.5s;
+        gap: 7px;
+
+        & > span {
+          width: 15px;
+          height: 15px;
+          color: lighten($black, 20%);
+          transition: 0.5s;
+
+          & > svg {
+            transition: 0.5s;
+            width: 15px;
+            height: 15px;
+          }
+        }
+
+        & > p {
+          color: $black;
+          font-size: 13px;
+          line-height: normal;
+          transition: 0.5s;
+          text-align: center;
+        }
+
+        &:hover {
+          transition: 0.5s;
+          background: $infobg;
+          border: 1px solid $info;
+
+          & > p {
+            transition: 0.5s;
+            color: $info;
+          }
+
+          & > span > svg {
+            transition: 0.5s;
+            color: $info;
+          }
+        }
+      }
+    }
+  }
+
+  .app_reminder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+
+    & > h4 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 10px;
+      line-height: normal;
+      font-weight: 700;
+
+      .close_app {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+
+        & > span {
+          width: 16px;
+          height: 16px;
+
+          & > svg {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+
+    & > ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      & > li {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 6px;
+        flex-wrap: wrap;
+        overflow: hidden;
+        justify-content: space-between;
+        border: 1px solid $tableborder;
+
+        .app_task_title {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 8px;
+          flex-direction: column;
+          justify-content: center;
+          width: 100%;
+          background: $white;
+
+          & > p {
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+
+            &:last-child {
+              margin-bottom: 0px;
+            }
+
+            & > b {
+              float: left;
+              width: 18px;
+              background: $infobg;
+              border: 1px solid $info;
+              border-radius: 4px;
+              margin-right: 8px;
+              color: $info;
+              height: 18px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              & > span {
+                width: 12px;
+                height: 12px;
+
+                & > svg {
+                  width: 12px;
+                  height: 12px;
+                }
+              }
+            }
+          }
+
+          .app_timing {
+            display: flex;
+            width: auto;
+
+            & > span {
+              width: auto;
+              color: $success;
+              padding: 0px 4px;
+              font-size: 12px;
+              margin-top: 0px;
+              font-weight: 700;
+              border-radius: 4px;
+              font-style: normal;
+              background: lighten($green, 40%);
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    .app_more {
+      float: left;
+      width: 100%;
+      text-align: center;
+      color: $info;
+      cursor: pointer;
+      font-size: 13px;
+      margin-top: 4px;
+      text-decoration: underline;
+    }
+  }
+
+  .app_schedules {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+
+    & > h4 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 10px;
+      line-height: normal;
+      font-weight: 700;
+
+      .close_app {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+
+        & > span {
+          width: 16px;
+          height: 16px;
+
+          & > svg {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+
+    & > ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      & > li {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 6px;
+        flex-wrap: wrap;
+        overflow: hidden;
+        justify-content: space-between;
+        border: 1px solid $tableborder;
+
+        .app_task_title {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 8px;
+          flex-direction: column;
+          justify-content: center;
+          width: 100%;
+          background: $white;
+
+          & > p {
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+
+            &:last-child {
+              margin-bottom: 0px;
+            }
+
+            & > b {
+              float: left;
+              width: 18px;
+              background: $infobg;
+              border: 1px solid $info;
+              border-radius: 4px;
+              margin-right: 8px;
+              color: $info;
+              height: 18px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              & > span {
+                width: 12px;
+                height: 12px;
+
+                & > svg {
+                  width: 12px;
+                  height: 12px;
+                }
+              }
+            }
+          }
+
+          .app_timing {
+            display: flex;
+            width: auto;
+
+            & > span {
+              width: auto;
+              color: $error;
+              padding: 0px 4px;
+              font-size: 12px;
+              margin-top: 0px;
+              font-weight: 700;
+              border-radius: 4px;
+              font-style: normal;
+              background: lighten($error, 40%);
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    .app_more {
+      float: left;
+      width: 100%;
+      text-align: center;
+      color: $info;
+      cursor: pointer;
+      font-size: 13px;
+      margin-top: 4px;
+      text-decoration: underline;
+    }
+  }
+
+  .app_full_items {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100dvh;
+    overflow: auto;
+    padding: 18px 18px 0px;
+    background: $white;
+  }
+}

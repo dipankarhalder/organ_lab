@@ -1,0 +1,16 @@
+@import "./core/fonts.scss";
+@import "./core/color.scss";
+@import "./core/base.scss";
+
+@import "./shared/toast.scss";
+@import "./shared/button.scss";
+@import "./shared/input.scss";
+@import "./shared/table.scss";
+@import "./shared/breadcrumb.scss";
+@import "./shared/popmodel.scss";
+@import "./shared/calender.scss";
+
+@import "./pages/auth.scss";
+@import "./pages/sidebar.scss";
+@import "./pages/admin.scss";
+@import "./pages/addForm.scss";

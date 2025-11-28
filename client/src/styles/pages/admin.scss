@@ -1,0 +1,969 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.app_admin_cover {
+  display: flex;
+  width: 100%;
+
+  .app_loading_data_option {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 99;
+
+    .app_loading_content {
+      gap: 6px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 50px;
+      background: $white;
+      border-radius: 6px;
+
+      & > span {
+        width: 30px;
+        height: 30px;
+        color: $blue;
+
+        & > svg {
+          width: 30px;
+          height: 30px;
+          animation: spin 1.4s linear infinite;
+        }
+      }
+
+      .app_content_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h6 {
+          line-height: 20px;
+          font-size: 18px;
+          color: $blue;
+          text-align: center;
+        }
+
+        P {
+          font-size: 12px;
+          color: $gray;
+          margin-top: 30px;
+        }
+      }
+    }
+
+    .app_approve_content {
+      gap: 6px;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      background: $white;
+      border-radius: 6px;
+
+      & > span {
+        width: 30px;
+        height: 30px;
+        color: $approve;
+
+        & > svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      .app_content_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h6 {
+          line-height: 20px;
+          font-size: 18px;
+          color: $black;
+          text-align: center;
+        }
+
+        P {
+          text-align: center;
+          font-size: 12px;
+          color: $gray;
+          margin-top: 10px;
+          line-height: 16px;
+        }
+      }
+
+      .app_logout_bun {
+        height: 40px;
+        width: auto;
+        padding: 0 24px 0px 20px;
+        background: $blue;
+        color: $white;
+        font-weight: 500;
+        font-size: 15px;
+        border-radius: 40px;
+        border: 0px solid $transparent;
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+        gap: 10px;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+          background: $hblue;
+          transition: 0.5s;
+        }
+
+        & > span {
+          width: 20px;
+          height: 20px;
+          color: $white;
+          transform: rotate(270deg);
+
+          & > svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .app_main_content_area {
+    margin-left: 200px;
+    margin-top: 46px;
+    width: calc(100% - 440px);
+
+    .app_page_insides {
+      display: flex;
+      flex-direction: column;
+
+      .app_main_container {
+        width: 100%;
+        padding: 20px 20px 30px;
+
+        .app_main_content_dashboard {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+
+          .app_main_aval_doctor {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            > h2 {
+              width: 100%;
+              display: flex;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: normal;
+              color: $gray;
+              gap: 10px;
+
+              > span {
+                font-weight: 600;
+                color: $blue;
+              }
+            }
+
+            .app_doctor_today {
+              width: 100%;
+              margin-top: 10px;
+
+              > ul {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                gap: 8px;
+
+                > li {
+                  width: 19.41%;
+                  padding: 10px 13px;
+                  background: $white;
+                  border-radius: 8px;
+                  border: 1px solid $tableborder;
+
+                  h6 {
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 14px;
+                  }
+
+                  > p {
+                    font-size: 11px;
+                    color: $gray;
+                  }
+
+                  .app_doct_time {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    gap: 6px;
+                    align-items: center;
+                    margin-top: 4px;
+                    overflow-x: auto;
+                    white-space: nowrap;
+
+                    & > span {
+                      font-size: 10px;
+                      padding: 2px 6px;
+                      background: $infobg;
+                      border-radius: 4px;
+                      border: 1px solid $blue;
+                      flex-shrink: 0;
+                    }
+                  }
+
+                  &:hover {
+                    > h6 {
+                      color: $blue;
+                      text-decoration: underline;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .app_table_cover {
+          display: flex;
+          flex-direction: column;
+
+          .app_table_top_header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            .app_manage_heading {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 14px;
+              width: 100%;
+
+              .app_heading_cover {
+                display: flex;
+                flex-direction: column;
+
+                h1 {
+                  font-size: 16px;
+                  font-weight: 500;
+                }
+
+                p {
+                  font-size: 13px;
+                  font-weight: 500;
+                  color: $gray;
+                }
+              }
+
+              .app_links_and_btns {
+                display: flex;
+                gap: 10px;
+
+                .app_download_btn {
+                  & > span {
+                    font-size: 14px;
+                    font-weight: 500;
+                    height: 36px;
+                    color: $black;
+                    padding: 0 18px 0 14px;
+                    border-radius: 6px;
+                    line-height: 36px;
+                    border: 1px solid $gray;
+                    transition: 0.5s;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    & > span {
+                      width: 16px;
+                      height: 16px;
+
+                      & > svg {
+                        width: 16px;
+                        height: 16px;
+                      }
+                    }
+
+                    &:hover {
+                      background: $white;
+                      transition: 0.5s;
+                    }
+                  }
+                }
+
+                .app_new_link {
+                  & > a {
+                    font-size: 14px;
+                    font-weight: 500;
+                    height: 36px;
+                    color: $white;
+                    padding: 0 18px 0 14px;
+                    border-radius: 6px;
+                    line-height: 36px;
+                    background: $blue;
+                    transition: 0.5s;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    & > span {
+                      width: 16px;
+                      height: 16px;
+
+                      & > svg {
+                        width: 16px;
+                        height: 16px;
+                      }
+                    }
+
+                    &:hover {
+                      background: $hblue;
+                      transition: 0.5s;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .app_profile_cover {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 20px 30px 30px;
+
+      .app_profile_wrapper {
+        width: 768px;
+        border-radius: 10px;
+        border: 1px solid $tableborder;
+        background: $white;
+        overflow: hidden;
+
+        .app_profile_main_bg {
+          width: 100%;
+          height: 320px;
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+          }
+
+          & > span {
+            left: 0px;
+            bottom: 0px;
+            z-index: 4;
+            width: 100%;
+            height: 26%;
+            position: absolute;
+            background: #ffffff;
+            background: linear-gradient(
+              0deg,
+              rgba(255, 255, 255, 1) 4%,
+              rgba(255, 255, 255, 0) 70%
+            );
+          }
+
+          .app_profile_avatar {
+            position: absolute;
+            bottom: -70px;
+            left: 30px;
+            width: 140px;
+            height: 140px;
+            z-index: 5;
+            border-radius: 50%;
+            border: 4px solid $white;
+            box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+
+            .app_profile_dp {
+              display: flex;
+              width: 132px;
+              height: 132px;
+              overflow: hidden;
+
+              img {
+                width: 132px;
+                height: 132px;
+                object-fit: cover;
+              }
+            }
+
+            > button {
+              bottom: 0;
+              right: 0;
+              width: 40px;
+              height: 40px;
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              background: $white;
+              cursor: pointer;
+              border: 1px solid $tableborder;
+              box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+
+              > span {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                > svg {
+                  width: 17px;
+                  height: 17px;
+                }
+              }
+            }
+
+            .app_text_avatar {
+              width: 132px;
+              height: 132px;
+              font-size: 40px;
+              font-weight: 800;
+              color: $black;
+              display: flex;
+              overflow: hidden;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+              background: $gray;
+            }
+          }
+          .app_profile_back_btn {
+            position: absolute;
+            bottom: -14px;
+            right: 20px;
+            width: auto;
+            height: 34px;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 40px;
+            background: $white;
+            gap: 10px;
+            cursor: pointer;
+            padding: 0 14px;
+            border: 1px solid $tableborder;
+            box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+
+            > span {
+              width: 20px;
+              height: 20px;
+
+              > svg {
+                width: 20px;
+                height: 20px;
+              }
+            }
+
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+
+        .app_profile_body_content {
+          width: 100%;
+          background: $white;
+          padding: 86px 30px 20px 30px;
+
+          .app_profile_main_info {
+            display: flex;
+            flex-direction: column;
+
+            .app_profile_name_info {
+              display: flex;
+              flex-direction: column;
+              border-bottom: 1px solid lighten($tableborder, 8%);
+              margin-bottom: 20px;
+              padding-bottom: 26px;
+
+              h2 {
+                font-size: 24px;
+                font-weight: 500;
+                color: $black;
+              }
+
+              & > p {
+                color: $blue;
+                font-size: 14px;
+                font-weight: 500;
+
+                &.app_profile_desc {
+                  color: $black;
+                  margin-top: 20px;
+                }
+              }
+            }
+
+            .app_info_inside_profile {
+              display: flex;
+              flex-direction: column;
+              border-bottom: 1px solid lighten($tableborder, 8%);
+              margin-bottom: 20px;
+              padding-bottom: 20px;
+
+              & > h4 {
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 6px;
+              }
+
+              .app_maintain_profile {
+                display: flex;
+                margin-bottom: 4px;
+                gap: 14px;
+
+                h5 {
+                  color: $gray;
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+
+                  & > span {
+                    width: 18px;
+                    height: 18px;
+
+                    & > svg {
+                      width: 18px;
+                      height: 18px;
+                    }
+                  }
+
+                  & > b {
+                    font-size: 16px;
+                    font-weight: 500;
+                  }
+                }
+
+                & > p {
+                  font-size: 16px;
+                  font-weight: 500;
+
+                  &.app_design_role {
+                    text-transform: capitalize;
+                  }
+                }
+              }
+
+              .app_relationship {
+                display: flex;
+
+                > ul {
+                  display: flex;
+                  width: 100%;
+                  gap: 10px;
+
+                  > li {
+                    width: 50%;
+                    padding: 10px 16px;
+                    border-radius: 8px;
+                    border: 1px solid #efefef;
+                    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.06);
+
+                    p {
+                      font-size: 15px;
+                      font-weight: 500;
+
+                      > span {
+                        color: $gray;
+                        margin-right: 12px;
+                      }
+
+                      > em {
+                        font-style: normal;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .app_expire_sec {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid lighten($tableborder, 8%);
+            margin-bottom: 20px;
+            padding-bottom: 22px;
+
+            & > h4 {
+              font-size: 16px;
+              font-weight: 500;
+              margin-bottom: 12px;
+            }
+
+            & > ul {
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: row;
+
+              & > li {
+                width: 49%;
+                padding: 10px 18px;
+                border-radius: 6px;
+                margin-right: 2%;
+                margin-bottom: 16px;
+                position: relative;
+                border: 1px solid $tableborder;
+                box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.09);
+
+                &:nth-child(2n + 2) {
+                  margin-right: 0px;
+                }
+
+                .app_sess_isactive {
+                  top: 10px;
+                  right: 10px;
+                  position: absolute;
+                  width: 10px;
+                  height: 10px;
+                  background: $green;
+                  border-radius: 50%;
+                }
+
+                p {
+                  text-transform: capitalize;
+
+                  & > span {
+                    color: $gray;
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin-right: 14px;
+                  }
+                }
+              }
+            }
+          }
+
+          .app_profile_btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+
+            & > div,
+            & > span,
+            & > a {
+              gap: 8px;
+              display: flex;
+              color: $black;
+              border-radius: 6px;
+              padding: 6px 16px;
+              font-size: 14px;
+              cursor: pointer;
+              align-items: center;
+              background: lighten($gray, 49%);
+              border: 1px solid lighten($gray, 34%);
+
+              > span {
+                width: 16px;
+                height: 16px;
+
+                > svg {
+                  width: 16px;
+                  height: 16px;
+                }
+              }
+
+              &.app_edit_btn {
+                background: $infobg;
+                border: 1px solid $hblue;
+                color: $hblue;
+              }
+
+              &.app_delete_btn {
+                background: $errorbg;
+                border: 1px solid $red;
+                color: $red;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .app_add_new_item_form_cover {
+      width: 100%;
+      display: flex;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-right: 30px;
+      justify-content: flex-end;
+
+      .app_details_cover {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .app_details_wrapper {
+          width: 620px;
+          border-radius: 10px;
+          background: $white;
+          overflow: auto;
+
+          .app_main_details_bg {
+            display: flex;
+            width: 100%;
+            position: relative;
+
+            > img {
+              width: 100%;
+            }
+
+            > span {
+              left: 0px;
+              bottom: 0px;
+              z-index: 4;
+              width: 100%;
+              height: 26%;
+              position: absolute;
+              background: $white;
+              background: linear-gradient(
+                0deg,
+                rgba(255, 255, 255, 1) 4%,
+                rgba(255, 255, 255, 0) 70%
+              );
+            }
+
+            .app_profile_avatar {
+              position: absolute;
+              bottom: 0px;
+              left: 20px;
+              width: 140px;
+              height: 140px;
+              z-index: 5;
+              border-radius: 50%;
+              border: 4px solid $white;
+              box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+
+              .app_profile_dp {
+                display: flex;
+                width: 132px;
+                height: 132px;
+                overflow: hidden;
+
+                img {
+                  width: 132px;
+                  height: 132px;
+                  object-fit: cover;
+                }
+              }
+
+              .app_text_avatar {
+                width: 132px;
+                height: 132px;
+                font-size: 40px;
+                font-weight: 800;
+                color: $black;
+                display: flex;
+                overflow: hidden;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                background: $gray;
+              }
+            }
+
+            .app_cross_btn_form {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              width: 20px;
+              height: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 0px solid transparent;
+              background: transparent;
+              cursor: pointer;
+
+              & > span {
+                width: 20px;
+                height: 20px;
+
+                & > svg {
+                  width: 20px;
+                  height: 20px;
+                }
+              }
+            }
+          }
+
+          h1 {
+            width: 100%;
+            font-weight: 500;
+            padding: 16px 20px;
+            font-size: 24px;
+            margin-bottom: 0px;
+          }
+
+          .app_wrapper_items {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            margin-bottom: 30px;
+
+            &:last-child {
+              margin-bottom: 0px;
+            }
+
+            > p {
+              width: 100%;
+              color: $gray;
+              font-size: 13px;
+              margin-bottom: 6px;
+            }
+
+            .app_devider_create_update {
+              display: flex;
+              gap: 16px;
+              flex-wrap: wrap;
+
+              .app_creation_update_block {
+                width: calc(50% - 8px);
+                padding: 12px 20px;
+                border-radius: 6px;
+                border: 1px solid $tableborder;
+                box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.09);
+
+                > h5 {
+                  width: 100%;
+                  color: $gray;
+                  font-size: 13px;
+                  font-weight: 500;
+                  margin-bottom: 12px;
+                }
+
+                .app_create_filed {
+                  display: flex;
+                  margin-bottom: 2px;
+
+                  > p {
+                    width: 60px;
+                    color: lighten($gray, 8%);
+                    font-size: 13px;
+                  }
+
+                  > span {
+                    font-size: 13px;
+                  }
+                }
+              }
+
+              .app_button_section {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+                margin-top: 10px;
+                padding-top: 20px;
+                border-top: 1px solid lighten($tableborder, 8%);
+
+                > a,
+                > span,
+                > button {
+                  gap: 6px;
+                  display: flex;
+                  color: $black;
+                  border-radius: 6px;
+                  padding: 5px 14px 5px 12px;
+                  font-size: 14px;
+                  cursor: pointer;
+                  align-items: center;
+                  background: lighten($gray, 49%);
+                  border: 1px solid lighten($gray, 34%);
+
+                  &.app_edit_btn {
+                    color: $info;
+                  }
+
+                  &.app_del_btn {
+                    color: $red;
+                  }
+
+                  > span {
+                    width: 14px;
+                    height: 14px;
+
+                    > svg {
+                      width: 14px;
+                      height: 14px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .app_inside_details {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            margin-bottom: 10px;
+            padding: 16px 20px;
+
+            &:last-child {
+              margin-bottom: 0px;
+            }
+
+            .app_inside_filed {
+              display: flex;
+              margin-bottom: 4px;
+
+              > p {
+                width: 90px;
+                color: lighten($gray, 8%);
+                font-size: 16px;
+              }
+
+              > span {
+                font-size: 16px;
+
+                &.active {
+                  font-size: 14px;
+                  padding: 1px 8px;
+                  color: $success;
+                  border-radius: 6px;
+                  border: 1px solid $success;
+                  background: $successbg;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
